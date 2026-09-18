@@ -1,0 +1,28 @@
+{
+  "name": "codex-deck",
+  "version": "0.4.1",
+  "description": "Stream Deck plugin showing live Codex status tiles.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "icons": "python3 scripts/make-icons.py",
+    "typecheck": "tsc --noEmit",
+    "link": "streamdeck link com.topener.codexdeck.sdPlugin",
+    "restart": "streamdeck restart com.topener.codexdeck",
+    "probe": "node scripts/build.mjs --probe && node build/probe.js",
+    "preview": "node scripts/build.mjs --preview && node build/preview.js",
+    "validate": "streamdeck validate com.topener.codexdeck.sdPlugin",
+    "release": "node scripts/build.mjs --release",
+    "pack": "npm run typecheck && npm run icons && npm run release && npm run validate && streamdeck pack com.topener.codexdeck.sdPlugin --output build --force"
+  },
+  "dependencies": {
+    "@elgato/streamdeck": "^2.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.7.0"
+  }
+}

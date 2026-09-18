@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Build output
+build/
+com.topener.codexdeck.sdPlugin/bin/
+*.streamDeckPlugin
+
+# Stream Deck runtime
+com.topener.codexdeck.sdPlugin/logs/
+*.log
+
+# TypeScript / tooling caches
+*.tsbuildinfo
+.eslintcache
+
+# Python (scripts/make-icons.py)
+__pycache__/
+*.pyc
+
+# Local tool settings
+.claude/settings.local.json
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

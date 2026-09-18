@@ -1,0 +1,124 @@
+{
+	"$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+	"UUID": "com.topener.codexdeck",
+	"Name": "Codex Deck",
+	"Version": "0.4.1.0",
+	"Author": "topener",
+	"Description": "Live Codex status on your keys: one tile each for activity, short- and long-window quota, and time to reset. Reads local CLI state only.",
+	"Category": "Codex Deck",
+	"CategoryIcon": "imgs/plugin/category",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 2,
+	"Nodejs": {
+		"Version": "20",
+		"Debug": "disabled"
+	},
+	"Software": {
+		"MinimumVersion": "6.5"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "12"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"CodePath": "bin/plugin.js",
+	"Actions": [
+		{
+			"UUID": "com.topener.codexdeck.activity",
+			"Name": "Codex Activity",
+			"Icon": "imgs/actions/activity/icon",
+			"Tooltip": "Whether Codex needs you, is working, or is idle.",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/activity/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		},
+		{
+			"UUID": "com.topener.codexdeck.usage-5h",
+			"Name": "Quota — 5h",
+			"Icon": "imgs/actions/usage-5h/icon",
+			"Tooltip": "Percentage of the short (5h) quota window still left.",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/usage-5h/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		},
+		{
+			"UUID": "com.topener.codexdeck.usage-weekly",
+			"Name": "Quota — Weekly",
+			"Icon": "imgs/actions/usage-weekly/icon",
+			"Tooltip": "Percentage of the weekly quota window still left.",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/usage-weekly/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		},
+		{
+			"UUID": "com.topener.codexdeck.reset-5h",
+			"Name": "Reset — 5h",
+			"Icon": "imgs/actions/reset-5h/icon",
+			"Tooltip": "Time until the short (5h) quota window rolls over.",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/reset-5h/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		},
+		{
+			"UUID": "com.topener.codexdeck.reset-weekly",
+			"Name": "Reset — Weekly",
+			"Icon": "imgs/actions/reset-weekly/icon",
+			"Tooltip": "Time until the weekly quota window rolls over.",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/reset-weekly/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		},
+		{
+			"UUID": "com.topener.codexdeck.status",
+			"Name": "Codex Status (legacy)",
+			"Icon": "imgs/actions/status/icon",
+			"Tooltip": "Replaced by the five dedicated tiles.",
+			"PropertyInspectorPath": "ui/status.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/status/key",
+					"TitleAlignment": "middle"
+				}
+			],
+			"VisibleInActionsList": false
+		}
+	]
+}
